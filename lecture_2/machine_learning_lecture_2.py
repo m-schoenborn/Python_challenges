@@ -46,3 +46,11 @@ print(male / (female + male)) # percentage of males
 
 
 # Question 7 : What contributed to the survival of those who survived?
+
+print((df[df['Survived'] == 1]['Pclass']).value_counts()) # more people from passenger class 1 and 2 survived
+print((df[df['Survived'] == 1]['Sex']).value_counts()) # more females than males survived
+print((df[df['Survived'] == 1]['Age']).value_counts(ascending=False)) #younger people were more likely to survive than older people
+print((df[df['Survived'] == 1]['SibSp']).value_counts()) #people travelling alone were more likely to survive (not sibling or spouse)
+print((df[df['Survived'] == 1]['Parch']).value_counts()) #people who were not a parent or a child were more likely to survive (not traveling as a family)
+print((df[df['Survived'] == 1]['Fare']).mean()) # the average ticket price of people who survived is 48.4 --> higher ticket price means higher chance of survival
+print((df[df['Survived'] == 1]['Embarked']).value_counts()) #more people survived of those embarking on Port S.
